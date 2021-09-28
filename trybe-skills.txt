@@ -2,3 +2,5 @@ unix
 bash
 git
 
+ReactJs
+Ciencia da computação
