@@ -1,0 +1,28 @@
+.lista-ordenada {
+  background: yellow;
+}
+
+.lista-ordenada li:nth-of-type(odd) {
+  text-transform: uppercase;
+}
+
+.lista-ordenada li:nth-of-type(even) {
+  color: green;
+}
+
+h1, h3 {
+  color: red;
+}
+
+h1, h3 em {
+  font-size: 40px;
+  border: 1px solid black;
+}
+
+li {
+  font-size: 20px;
+}
+
+li em {
+  font-weight: bold;
+}
