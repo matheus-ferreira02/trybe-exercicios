@@ -30,3 +30,36 @@ li em {
 .linguagens li:nth-child(-n+3) {
   color: blue;
 }
+
+.linguagens li:nth-child(n + 2):nth-child(-n + 3) {
+  background: pink;
+}
+
+.links li a {
+  text-decoration: none;
+}
+
+.links li:hover:nth-child(1) {
+  font-weight: bold;
+  background-color: orange;
+}
+
+.links li:hover:nth-child(2) {
+  font-weight: bold;
+  background-color: green;
+}
+
+.links li:hover:nth-child(3) {
+  font-weight: bold;
+  background-color: black;
+}
+
+.links li:hover:nth-child(4) {
+  font-weight: bold;
+  background-color: yellow;
+}
+
+.links li:hover:nth-child(5) {
+  font-weight: bold;
+  background-color: green;
+}
