@@ -1,12 +1,12 @@
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let maiorNum = 0;
 
-for (indice = 0; indice < numbers.length; indice += 1) {
-    if (numbers[indice] > maiorNum) {
-        console.log(numbers[indice] + " é maior que " + maiorNum);
-        maiorNum = numbers[indice];        
+for (let number of numbers) {
+    if (number > maiorNum) {
+        console.log(number + " é maior que " + maiorNum);
+        maiorNum = number;        
     } else {
-        console.log(numbers[indice] + " é menor que " + maiorNum);
+        console.log(number + " é menor que " + maiorNum);
     }
 }
 
