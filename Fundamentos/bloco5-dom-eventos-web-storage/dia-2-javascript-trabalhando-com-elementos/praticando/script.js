@@ -16,5 +16,31 @@ console.log(document.getElementById('elementoOndeVoceEsta').previousElementSibli
 console.log(document.getElementById('elementoOndeVoceEsta').nextSibling);
 console.log(document.getElementById('elementoOndeVoceEsta').nextElementSibling);
 
-elementosFilhos = document.getElementById('pai').children;
-console.log(elementosFilhos[elementosFilhos.length -2]);
+elementosFilhos = document.getElementById('pai').lastElementChild.previousElementSibling;
+console.log(elementosFilhos);
+
+irmaoOndeVoceEsta = document.createElement('section');
+irmaoOndeVoceEsta.id = 'elemento-irmao';
+paiElementos = document.querySelector('#pai');
+
+paiElementos.appendChild(irmaoOndeVoceEsta);
+console.log(paiElementos);
+
+filhoOndeVoceEsta = document.createElement('p');
+filhoOndeVoceEsta.innerText = 'Outro texto aqui';
+
+paiOndeVoceEsta = document.querySelector('#elementoOndeVoceEsta');
+
+paiOndeVoceEsta.appendChild(filhoOndeVoceEsta);
+console.log(paiOndeVoceEsta);
+
+filhoDoFilhoDoFilho = document.createElement('p');
+filhoDoFilhoDoFilho.innerText = ('filhoDoFilhoDoFilho filhoDoFilhoDoFilhofilhoDoFilhoDoFilho filhoDoFilhoDoFilho filhoDoFilhoDoFilho');
+filhoDoFilhoDoFilho.id = 'filhoDoFilhoDoFilho'
+
+filhoDoFilho = document.querySelector('#primeiroFilhoDoFilho');
+filhoDoFilho.appendChild(filhoDoFilhoDoFilho);
+
+chegandoAoTerceiroFilho = document.getElementById('filhoDoFilhoDoFilho').parentNode.parentNode.nextElementSibling;
+console.log(chegandoAoTerceiroFilho);
+
