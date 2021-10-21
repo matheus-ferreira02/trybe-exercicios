@@ -44,3 +44,10 @@ filhoDoFilho.appendChild(filhoDoFilhoDoFilho);
 chegandoAoTerceiroFilho = document.getElementById('filhoDoFilhoDoFilho').parentNode.parentNode.nextElementSibling;
 console.log(chegandoAoTerceiroFilho);
 
+elementosARemover = ['primeiroFilho', 'segundoEUltimoFilhoDoFilho', 'terceiroFilho', 'quartoEUltimoFilho'];
+for (i of elementosARemover) {
+    filhoARemover = document.getElementById(i);
+    filhoARemover.parentNode.removeChild(filhoARemover);
+}
+
+
