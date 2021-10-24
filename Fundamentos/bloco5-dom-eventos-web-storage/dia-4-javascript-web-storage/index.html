@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de texto</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Qahiri&family=Space+Mono&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Leitor de Texto Personalizável</h1>
+    </header>
+    <main>
+        <section id="options">
+            <section class="background-color">
+                <p>Cor de fundo: </p>
+                <input name="backgroundColor" type="radio" value="blue"/> Azul
+                <input name="backgroundColor" type="radio" value="red"/> Vermelho
+                <input name="backgroundColor" type="radio" value="yellow"/> Amarelo
+                <input name="backgroundColor" type="radio" value="green"/> Verde
+                <input name="backgroundColor" type="radio" value="black"/> Preto
+                <input name="backgroundColor" type="radio" value="white"/> Branco
+                <input name="backgroundColor" type="radio" value="purple"/> Roxo
+                <input name="backgroundColor" type="radio" value="orange"/> Laranja
+            </section>
+
+            <section class="text-color">
+                <p>Cor do texto: </p>
+                <input name="color" type="radio" value="blue"/> Azul
+                <input name="color" type="radio" value="red"/> Vermelho
+                <input name="color" type="radio" value="yellow"/> Amarelo
+                <input name="color" type="radio" value="green"/> Verde
+                <input name="color" type="radio" value="black"/> Preto
+                <input name="color" type="radio" value="white"/> Branco
+                <input name="color" type="radio" value="purple"/> Roxo
+                <input name="color" type="radio" value="orange"/> Laranja
+            </section>
+
+            <section class="font-size">
+                <p>Tamanho da fonte: </p>
+                <input name="fontSize" type="radio" value="15px"/> Pequena
+                <input name="fontSize" type="radio" value="20px"/> Média
+                <input name="fontSize" type="radio" value="30px"/> Grande
+                <input name="fontSize" type="radio" value="40px"/> Extra Grande
+            </section>
+
+            <section class="line-height">
+                <p>Espaçamento entre as linhas: </p>
+                <input name="lineHeight" type="radio" value="30px"/> Pequena
+                <input name="lineHeight" type="radio" value="40px"/> Média
+                <input name="lineHeight" type="radio" value="50px"/> Grande
+                <input name="lineHeight" type="radio" value="60px"/> Extra Grande
+            </section>
+
+            <section class="font-family">
+                <p>Tipo da fonte: </p>
+                <input name="fontFamily" type="radio" value="'Space Mono', monospace"/> Monoespaçada
+                <input name="fontFamily" type="radio" value="'Cedarville Cursive', cursive"/> Cursiva
+                <input name="fontFamily" type="radio" value="'Qahiri', sans-serif"/> Decorativa
+                <input name="fontFamily" type="radio" value="'Arial', sans-serif"/> Normal
+            </section>
+
+            <section class="buttons">
+                <button type="button" id="save">Salvar</button>
+                <button type="button" id="reset-style">Resetar</button>
+            </section>
+        </section>
+        <section id="texts">
+            <h2>What is Lorem Ipsum?</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            
+            <h2>Where does it come from?</h2>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
