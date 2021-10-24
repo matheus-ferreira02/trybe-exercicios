@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leitor de texto</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Qahiri&family=Space+Mono&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
     <header>
@@ -12,20 +16,58 @@
     </header>
     <main>
         <section id="options">
-            <label for="text-background">Cor de fundo do texto: </label>
-            <input type="text" id="text-background" name="Name"/>
+            <section class="background-color">
+                <p>Cor de fundo: </p>
+                <input name="backgroundColor" type="radio" value="blue"/> Azul
+                <input name="backgroundColor" type="radio" value="red"/> Vermelho
+                <input name="backgroundColor" type="radio" value="yellow"/> Amarelo
+                <input name="backgroundColor" type="radio" value="green"/> Verde
+                <input name="backgroundColor" type="radio" value="black"/> Preto
+                <input name="backgroundColor" type="radio" value="white"/> Branco
+                <input name="backgroundColor" type="radio" value="purple"/> Roxo
+                <input name="backgroundColor" type="radio" value="orange"/> Laranja
+            </section>
 
-            <label for="color-text">Cor do texto: </label>
-            <input type="text" id="color-text" name="Name"/>
+            <section class="text-color">
+                <p>Cor do texto: </p>
+                <input name="color" type="radio" value="blue"/> Azul
+                <input name="color" type="radio" value="red"/> Vermelho
+                <input name="color" type="radio" value="yellow"/> Amarelo
+                <input name="color" type="radio" value="green"/> Verde
+                <input name="color" type="radio" value="black"/> Preto
+                <input name="color" type="radio" value="white"/> Branco
+                <input name="color" type="radio" value="purple"/> Roxo
+                <input name="color" type="radio" value="orange"/> Laranja
+            </section>
 
-            <label for="font-size">Tamanho da fonte: </label>
-            <input type="text" id="font-size" name="Name"/>
+            <section class="font-size">
+                <p>Tamanho da fonte: </p>
+                <input name="fontSize" type="radio" value="15px"/> Pequena
+                <input name="fontSize" type="radio" value="20px"/> Média
+                <input name="fontSize" type="radio" value="30px"/> Grande
+                <input name="fontSize" type="radio" value="40px"/> Extra Grande
+            </section>
 
-            <label for="line-height">Espaçamento entre linhas do texto: </label>
-            <input type="text" id="line-height" name="Name"/>
+            <section class="line-height">
+                <p>Espaçamento entre as linhas: </p>
+                <input name="lineHeight" type="radio" value="30px"/> Pequena
+                <input name="lineHeight" type="radio" value="40px"/> Média
+                <input name="lineHeight" type="radio" value="50px"/> Grande
+                <input name="lineHeight" type="radio" value="60px"/> Extra Grande
+            </section>
 
-            <label for="font-family">Tipo da fonte: </label>
-            <input type="text" id="font-family" name="Name"/>
+            <section class="font-family">
+                <p>Tipo da fonte: </p>
+                <input name="fontFamily" type="radio" value="'Space Mono', monospace"/> Monoespaçada
+                <input name="fontFamily" type="radio" value="'Cedarville Cursive', cursive"/> Cursiva
+                <input name="fontFamily" type="radio" value="'Qahiri', sans-serif"/> Decorativa
+                <input name="fontFamily" type="radio" value="'Arial', sans-serif"/> Normal
+            </section>
+
+            <section class="buttons">
+                <button type="button" id="save">Salvar</button>
+                <button type="button" id="reset-style">Resetar</button>
+            </section>
         </section>
         <section id="texts">
             <h2>What is Lorem Ipsum?</h2>
