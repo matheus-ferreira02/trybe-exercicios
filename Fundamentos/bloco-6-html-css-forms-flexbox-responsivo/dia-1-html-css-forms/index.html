@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+  </head>
+  <body>
+    <form action="" method="get" id="formulario">
+      <fieldset class="dados-pessoais">
+        <label for="input-nome">Nome: </label>
+        <input type="text" name="nome" id="input-nome" required/>
+        <br>
+        <label for="input-email">E-mail: </label>
+        <input type="email" name="email" id="input-email" required/>
+        <br>
+        <label for="input-cpf">CPF: </label>
+        <input type="text" name="name" id="input-cpf" required/>
+        <br>
+        <label for="input-endereço">Endereço: </label>
+        <input type="text" name="name" id="input-endereço" required/>
+        <br>
+        <label for="input-cidade">Cidade: </label>
+        <input type="text" name="name" id="input-cidade" required/>
+        <br>
+        <label for="select-estado">Estado: </label>
+        <select name="estado" id="select-estado" required>
+            <option value="null" selected>---</option>
+        </select>
+        <br>        
+        <input type="radio" value="casa" name="tipo" id="casa">
+        <label for="casa">Casa</label>
+        <input type="radio" value="apart" name="tipo" id="apart">
+        <label for="apart">Apartamento</label>
+      </fieldset>
+      <fieldset>
+          <label for="resumo-curriculo">Resumo do Curriculo</label>
+          <textarea name="resumo-curriculo" id="resumo-curriculo" cols="30" rows="10" required></textarea>
+          <br>
+          <label for="input-cargo">Cargo</label>
+          <input type="text" name="cargo" id="input-cargo" required>
+          <br>
+          <label for="input-descricao">Descrição do cargo</label>
+          <input type="text" name="descricao" id="input-descricao" required>
+          <br>
+          <label for="input-data">Data de Inicio</label>
+          <input type="date" name="data" id="input-data" required>
+      </fieldset>
+      <button type="submit" id="submit">Enviar</button>
+      <button type="reset" id="reset">Limpar</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
