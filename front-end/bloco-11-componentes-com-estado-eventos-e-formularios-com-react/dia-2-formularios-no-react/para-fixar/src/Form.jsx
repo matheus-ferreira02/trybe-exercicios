@@ -41,9 +41,7 @@ class Form extends Component {
     ]
 
     const formularioPreenchido = errorCases.every(error => error !== true);
-    console.log(formularioPreenchido)
     this.setState({ formularioComErros: !formularioPreenchido});
-    console.log(this.state.formularioComErros)
   }
 
   render() {
