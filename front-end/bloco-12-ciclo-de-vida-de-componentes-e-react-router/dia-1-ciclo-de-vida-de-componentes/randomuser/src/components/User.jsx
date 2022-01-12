@@ -35,7 +35,6 @@ export default class User extends Component {
   shouldComponentUpdate(__nextProps, nextState) {
     const { api } = nextState;
     const renderApi = api.length !== 0 && api.dob.age < 50;
-    console.log(renderApi)
 
     return renderApi;
   }
