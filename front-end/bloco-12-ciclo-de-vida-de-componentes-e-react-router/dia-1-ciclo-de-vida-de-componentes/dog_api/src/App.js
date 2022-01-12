@@ -21,6 +21,7 @@ class App extends Component {
   }
 
   componentDidUpdate(__prevProps, prevState) {
+    if(prevState.dogData.message.includes('terrier'))
     console.log(prevState)
   }
 
