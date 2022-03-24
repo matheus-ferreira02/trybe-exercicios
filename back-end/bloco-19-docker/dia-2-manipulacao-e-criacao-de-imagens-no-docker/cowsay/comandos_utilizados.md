@@ -20,7 +20,7 @@ CMD ["dragon-and-cow", "Vou ficar louco"]
 
 `CMD ["dragon-and-cow", "Vou ficar louco"]`
 <br>
-//
+// comando que vai ser executado por padrão caso não seja passado a flag -f (que define o monstro que aparece)
 
 ## Buildando imagem
 `docker build -t cowsay .`
