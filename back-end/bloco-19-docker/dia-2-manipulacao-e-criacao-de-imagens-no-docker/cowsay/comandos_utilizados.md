@@ -2,9 +2,17 @@
 
 ## Criando Dockerfile da imagem
 
+~~~
+FROM chuanwen/cowsay
+
+ENTRYPOINT ["/usr/games/cowsay", "-f"]
+
+CMD ["dragon-and-cow", "Vou ficar louco"]
+~~~
+
 `FROM chuanwen/cowsay`
 <br>
-// imagem da imagem cowsay [documentação](https://hub.docker.com/r/mbentley/cowsay/dockerfile)
+// nome da imagem cowsay [documentação](https://hub.docker.com/r/mbentley/cowsay/dockerfile)
 
 `ENTRYPOINT ["/usr/games/cowsay", "-f"]`
 <br>
@@ -29,3 +37,7 @@
 // --rm: apaga o container logo após terminar de executar
 <br>
 // cowsay: nome da imagem em que o container vai ser criado
+
+~~~docker build -t cowsay .
+
+docker run --rm cowsay~~~
