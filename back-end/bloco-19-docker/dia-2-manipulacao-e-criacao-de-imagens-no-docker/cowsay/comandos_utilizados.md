@@ -38,6 +38,8 @@ CMD ["dragon-and-cow", "Vou ficar louco"]
 <br>
 // cowsay: nome da imagem em que o container vai ser criado
 
-~~~docker build -t cowsay .
+~~~
+docker build -t cowsay .
 
-docker run --rm cowsay~~~
+docker run --rm cowsay
+~~~
