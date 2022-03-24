@@ -15,14 +15,14 @@
 //
 
 ## Buildando imagem
-docker build -t cowsay .
+`docker build -t cowsay .`
 <br>
 // -t: nome da imagem <NOME>
 <br>
 // .: local da imagem que será buildada
 
 ## Criando container a partir da imagem
-docker run --rm cowsay
+`docker run --rm cowsay`
 <br>
 // run: cria um container 
 <br>
