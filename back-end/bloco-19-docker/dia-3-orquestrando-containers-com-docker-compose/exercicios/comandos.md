@@ -75,5 +75,30 @@
   `docker image rm b9b`
 
 
-## Exercicio 2
+## Exercicio 2/3
 
+docker-compose.yml
+~~~
+version: '3'
+
+services:
+  exercicio2:
+    image: ghost:1-alpine
+
+    ports:
+      - 2368:2368
+    depends_on:
+      - "db"
+    environment:
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: example
+      database__connection__database: ghost
+  
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "${database__connection__password}"
+      MYSQL_USER: "${database__connection__user}"
+~~~
