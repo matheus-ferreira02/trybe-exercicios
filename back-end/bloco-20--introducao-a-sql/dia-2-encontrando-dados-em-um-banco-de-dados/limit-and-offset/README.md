@@ -1,0 +1,1 @@
+- Mostre 10 resultados a partir da quarta linha;
