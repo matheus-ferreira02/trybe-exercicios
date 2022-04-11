@@ -1,0 +1,2 @@
+- Queremos saber o Nome das pessoas colaboradoras e suas respectivas gerências ( manager ) cujos departamentos ( department ) são diferentes.
+- Exiba o Nome e a quantidade de pessoas lideradas de cada gerente.
