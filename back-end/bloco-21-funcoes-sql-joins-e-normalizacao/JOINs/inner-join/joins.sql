@@ -33,3 +33,25 @@ on cu.address_id = ad.address_id
 where cu.active = 1
 group by cu.customer_id
 order by first_name desc, last_name desc;
+
+select concat(sta.first_name, ' ', sta.last_name) as fullname,
+avg(pa.amount) as average_amount
+from payment as pa
+inner join staff as sta
+on sta.staff_id = pa.staff_id
+where year(pa.payment_date) = 2006
+group by fullname;
+
+select 
+  a.actor_id,
+  concat(ac.first_name, ' ', ac.last_name) as fullname,
+  fa.film_id,
+  fi.title
+from 
+  film_actor as fa
+inner join 
+  actor as ac on ac.actor_id = fa.actor_id
+inner join
+  film as fi on fa.film_id = fi.film_id;
+
+
