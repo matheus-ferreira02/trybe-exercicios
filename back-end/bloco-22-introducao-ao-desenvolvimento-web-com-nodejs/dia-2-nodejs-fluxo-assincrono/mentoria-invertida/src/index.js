@@ -12,7 +12,7 @@ const createJSON = async (clientes, compras) => {
   }));
   console.log(obj);
 
-  fs.writeFile('./resultado.json', JSON.stringify(obj));
+  fs.writeFile('./resultado.json', JSON.stringify(obj, null, 2));
 }
 
 Promise.all([
