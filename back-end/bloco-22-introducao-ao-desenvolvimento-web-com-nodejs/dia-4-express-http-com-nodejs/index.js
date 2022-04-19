@@ -26,4 +26,10 @@ app.post('/greetings', validationAge, (req, res) => {
   res.status(200).json({ "message": `Hello, ${name}!` })
 })
 
+app.put('/users/:name/:age', (req, res) => {
+  const { name, age } = req.params;
+
+  res.status(200).send({ "message": `Seu nome é ${name} e você tem ${age} anos de idade` });
+})
+
 app.listen(PORT);
