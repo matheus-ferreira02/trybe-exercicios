@@ -35,15 +35,16 @@ app.put('/users/:name/:age', (req, res) => {
 
 const getData = async () => {
   try {
-    const data = await fs.readFile('simpsons.json');
+    const data = await fs.readFile('simpns.json');
     return JSON.parse(data);
   } catch {
-    throw new Error('Erro');
+    return false;
   }  
 }
 
 app.post('/simpsons/regyster', async (req, res) => {
   const characters = await getData();
+  if (!characters) return res.status(500).json({ "message": "Internal Server Error" });
   const { id, name } = req.body;
 
   const containCharacter = characters.some((character) => character.id === id);
@@ -56,6 +57,7 @@ app.post('/simpsons/regyster', async (req, res) => {
 
 app.get('/simpsons/:id', async (req, res) => {
   const characters = await getData();
+  if (!characters) return res.status(500).json({ "message": "Internal Server Error" });
   const { id } = req.params;
   const character = characters.find((element) => element.id === id);
 
@@ -66,8 +68,15 @@ app.get('/simpsons/:id', async (req, res) => {
 
 app.get('/simpsons', async (_req, res) => {
   const characters = await getData();
-  
+  if (!characters) return res.status(500).json({ "message": "Internal Server Error" });
   res.status(200).json({ "results": [...characters] });
 });
+
+const handleError = (_err, _req, res, _next) => {
+  console.log('entrou');
+  res.status(500).json({ "message": "Internal Server Error" });
+}
+
+app.use(handleError);
 
 app.listen(PORT);
