@@ -42,10 +42,16 @@ const getData = async () => {
   }  
 }
 
-app.get('/simpsons', async (_req, res) => {
-  const json = await getData();
-  
-  res.status(200).json({ "results": [...json] });
+app.post('/simpsons/regyster', async (req, res) => {
+  const characters = await getData();
+  const { id, name } = req.body;
+
+  const containCharacter = characters.some((character) => character.id === id);
+  if(containCharacter) return res.status(409).json({ "message": "id already exists" });
+
+  characters.push({ id, name });
+  fs.writeFile('simpsons.json', JSON.stringify(characters, null, 2));
+  res.status(200).json({ "results": [...characters] });
 });
 
 app.get('/simpsons/:id', async (req, res) => {
@@ -55,7 +61,13 @@ app.get('/simpsons/:id', async (req, res) => {
 
   if(!character) return res.status(404).json({ "message": "simpson not found" });
   
-  res.status(200).json({ "result": character });
+  res.status(204).end();
+});
+
+app.get('/simpsons', async (_req, res) => {
+  const characters = await getData();
+  
+  res.status(200).json({ "results": [...characters] });
 });
 
 app.listen(PORT);
