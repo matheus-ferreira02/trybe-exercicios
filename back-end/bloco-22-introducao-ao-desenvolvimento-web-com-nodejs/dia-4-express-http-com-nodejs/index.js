@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs').promises;
 const PORT = 3005;
 const app = express();
+const crypto = require('crypto');
 
 app.use(express.json());
 
@@ -74,6 +75,20 @@ app.get('/simpsons/:id', authorizationMiddleware, getDataMiddleware, async (req,
   
   res.status(200).json({ "result": character });
 });
+
+
+const validationMiddleware = (req, res, next) => {
+  const { email, password, firstName, phone } = req.body;
+  if(!email || !password || !firstName || !phone) return res.status(401).json({ "message": "missing fields" });
+  next();
+}
+
+app.post('/signup', validationMiddleware, (req, res) => {
+  const token = crypto.randomBytes(8).toString('hex');
+  res.status(200).json({ token });
+});
+
+
 
 const handleError = (err, _req, res, _next) => {
   const { status, message } = err;
