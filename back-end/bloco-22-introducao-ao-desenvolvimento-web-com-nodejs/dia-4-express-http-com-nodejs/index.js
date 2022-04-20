@@ -43,12 +43,18 @@ const getDataMiddleware = async (req, _res, next) => {
   }
 }
 
-app.get('/simpsons', getDataMiddleware, async (req, res) => {
+const authorizationMiddleware = (req, res, next) => {
+  const { authorization } = req.headers;
+  if(authorization.length < 16) return res.status(401).json({ "message": "Token inválido!" });
+  next();
+}
+
+app.get('/simpsons', authorizationMiddleware, getDataMiddleware, async (req, res) => {
   const { characters } = req;
   res.status(200).json({ "results": [...characters] });
 });
 
-app.post('/simpsons/regyster', getDataMiddleware, async (req, res) => {
+app.post('/simpsons/regyster', authorizationMiddleware, getDataMiddleware, async (req, res) => {
   const { characters } = req;
   const { id, name } = req.body;
 
@@ -59,7 +65,7 @@ app.post('/simpsons/regyster', getDataMiddleware, async (req, res) => {
   res.status(200).json({ "results": [...characters] });
 });
 
-app.get('/simpsons/:id', getDataMiddleware, async (req, res) => {
+app.get('/simpsons/:id', authorizationMiddleware, getDataMiddleware, async (req, res) => {
   const { characters } = req;
   const { id } = req.params;
   const character = characters.find((element) => element.id === id);
