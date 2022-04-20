@@ -49,3 +49,25 @@ app.post('/user/login', validateBodyLogin, (req, res) => {
 const PORT = 3200;
 
 app.listen(PORT);
+
+// Atividade 3
+/* const express = require('express');
+const app = express();
+app.use(express.json());
+const postReturn = [{id: 1, message: 'deu certo'}, {id: 2, message: 'deu certo tbm'}]
+
+app.get('/posts/:id', (req, res) => {
+  const { id } = req.params
+  const findId = postReturn.find((value) => value.id === parseInt(id))
+  if (findId) {
+    console.log('entrou');
+    return res.status(200).json(findId)
+  }
+
+  return res.status(404).json({ "message": "post not found" });
+
+})
+
+const PORT = 3300
+app.listen(PORT); */
+
