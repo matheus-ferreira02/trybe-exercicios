@@ -8,7 +8,6 @@ const getAll = async () => {
 
 const getCepById = async (id) => {
   const cep = await cepsModels.getCepById(id);
-  console.log(cep.length);
 
   if(!cep.length) {
     throw { code: 404, message: 'CEP não encontrado' }
@@ -17,7 +16,19 @@ const getCepById = async (id) => {
   return cep;
 }
 
+const createCep = async (dataCep) => {
+  const cep = await cepsModels.getCepById(dataCep.cep);
+  if(cep.length) {
+    console.log(cep);
+    throw { code: 409, message: 'CEP já existente' }
+  }
+  const cepCreated = await cepsModels.createCep(dataCep);
+
+  return cepCreated;
+}
+
 module.exports = {
   getAll,
   getCepById,
+  createCep,
 }

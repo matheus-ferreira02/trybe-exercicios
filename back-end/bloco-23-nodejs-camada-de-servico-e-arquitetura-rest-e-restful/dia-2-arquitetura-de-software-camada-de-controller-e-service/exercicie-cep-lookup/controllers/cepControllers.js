@@ -13,7 +13,15 @@ const getCepById = async (req, res) => {
   res.status(200).json(cep);
 }
 
+const createCep = async (req, res) => {
+  const cepCreated = await cepServices.createCep(req.body);
+  console.log('entrou');
+
+  return res.status(201).json(cepCreated);
+}
+
 module.exports = {
   getAll,
   getCepById,
+  createCep,
 }
