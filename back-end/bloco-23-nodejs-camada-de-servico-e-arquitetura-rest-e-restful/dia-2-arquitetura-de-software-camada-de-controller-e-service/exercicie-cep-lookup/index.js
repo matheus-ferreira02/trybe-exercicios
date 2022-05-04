@@ -1,5 +1,7 @@
 const express = require('express');
-const cepsModels = require('./models/cepsModels');
+const validatorCep = require('./middlewares/validatorCep');
+const cepControllers = require('./controllers/cepControllers');
+const rescue = require('express-rescue');
 
 const app = express();
 app.use(express.json());
@@ -9,11 +11,13 @@ app.get('/ping', async (_req, res) => {
   return res.status(200).json({ message: 'Pong!' });
 });
 
-app.get('/ceps', async (_req, res) => {
-  const ceps = await cepsModels.getAllCeps();
+app.get('/ceps', cepControllers.getAll);
 
-  return res.status(200).json(ceps);
-});
+app.get('/cep/:id', validatorCep, rescue(cepControllers.getCepById));
+
+app.use((err, _req, res, _next) => {
+  if (err.code) return res.status(err.code).json({ message: err.message })
+})
 
 app.listen(PORT, () => {
   console.log(`Ouvindo na porta ${PORT}`);

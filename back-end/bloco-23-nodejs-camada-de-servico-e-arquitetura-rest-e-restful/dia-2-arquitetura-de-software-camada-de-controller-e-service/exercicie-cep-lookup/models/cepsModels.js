@@ -7,6 +7,14 @@ const getAllCeps = async () => {
   return ceps;
 }
 
+const getCepById = async (id) => {
+  const query = 'SELECT * FROM cep_lookup.ceps WHERE cep = ?';
+  const [ cep ] = await connection.execute(query, [id]);
+
+  return cep;
+}
+
 module.exports = {
   getAllCeps,
+  getCepById,
 }
