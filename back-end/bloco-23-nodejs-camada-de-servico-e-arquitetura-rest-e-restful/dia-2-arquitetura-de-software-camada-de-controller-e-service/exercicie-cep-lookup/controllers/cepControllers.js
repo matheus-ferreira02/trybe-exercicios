@@ -15,7 +15,6 @@ const getCepById = async (req, res) => {
 
 const createCep = async (req, res) => {
   const cepCreated = await cepServices.createCep(req.body);
-  console.log('entrou');
 
   return res.status(201).json(cepCreated);
 }

@@ -19,7 +19,8 @@ app.get('/cep/:id', validatorCep, rescue(cepControllers.getCepById));
 app.post('/cep', validatorBody, rescue(cepControllers.createCep));
 
 app.use((err, _req, res, _next) => {
-  if (err.code) return res.status(err.code).json({ message: err.message })
+  if (err.code) return res.status(err.code).json({ message: err.message });
+  return res.status(500).json({ message: err.message });
 })
 
 app.listen(PORT, () => {
