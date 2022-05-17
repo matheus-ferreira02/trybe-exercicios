@@ -15,6 +15,7 @@ const getBookById = async (req, res) => {
 }
 
 const createBook = async (req, res) => {
+  console.log(req.body);
   const response = await BooksServices.createBook(req.body);
 
   return res.status(200).json(response);

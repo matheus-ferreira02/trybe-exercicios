@@ -12,7 +12,7 @@ const getBookById = async (id) => {
   return response;
 }
 
-const createBook = async (title, author, pageQuantity) => {
+const createBook = async ({ title, author, pageQuantity }) => {
   const response = await Book.create({
     title,
     author,
