@@ -1,4 +1,5 @@
 'use strict';
+
 const Book = (sequelize, dataType) => {
   const Book = sequelize.define('Book', {
     title: dataType.STRING,
@@ -6,9 +7,10 @@ const Book = (sequelize, dataType) => {
     pageQuantity: dataType.INTEGER, 
   }, {
     underscored: true,
+    tableName: 'Books'
   });
 
-  return Book
+  return Book;
 }
 
 module.exports = Book;

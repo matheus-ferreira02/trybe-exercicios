@@ -1,9 +1,9 @@
-const { Books } = require('../models');
+const { Book } = require('../models');
 
 const getAll = async () => {
-  const response = await Books.findAll();
+  const response = await Book.findAll();
 
-  return response.status(200).json(response);
+  return response;
 }
 
 module.exports = {
