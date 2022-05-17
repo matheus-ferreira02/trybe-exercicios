@@ -15,8 +15,14 @@ const getBookById = async (req, res) => {
 }
 
 const createBook = async (req, res) => {
-  console.log(req.body);
   const response = await BooksServices.createBook(req.body);
+
+  return res.status(200).json(response);
+}
+
+const updateBook = async (req, res) => {
+  const { id } = req.params;
+  const response = await BooksServices.updateBook(id, req.body);
 
   return res.status(200).json(response);
 }
@@ -25,4 +31,5 @@ module.exports = {
   getAll,
   getBookById,
   createBook,
+  updateBook,
 }
