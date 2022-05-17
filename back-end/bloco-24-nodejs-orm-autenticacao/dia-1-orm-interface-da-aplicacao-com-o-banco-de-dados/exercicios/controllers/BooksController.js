@@ -16,4 +16,5 @@ const getBookById = async (req, res) => {
 
 module.exports = {
   getAll,
+  getBookById,
 }
