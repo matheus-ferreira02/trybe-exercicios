@@ -14,5 +14,3 @@ class Dog {
     }
 }
 ;
-const dog1 = new Dog('Petz', 'Pitbull', 12, sizeDog.Bigger);
-console.log(dog1);
