@@ -29,4 +29,3 @@ export default class Student extends Person {
     if (grades.length >= 4) throw new Error('A pessoa estudante deve possuir no máximo 4 notas de provas');
   }
 }
- 
