@@ -1,0 +1,24 @@
+// exercicio 1
+use test;
+
+db.bios.find({ _id: 8 });
+
+
+// exercicio 2
+db.bios.find({ _id: 8 }, { name: 1 });
+
+// exercicio 3
+db.bios.find({ _id: 8 }, { _id: 0, name: 1, birth: 1 });
+
+
+// exercicio 4
+db.bios.find({ "name.first": 'ios' }).pretty();
+
+// exercicio 5
+db.bios.find().limit(3).pretty();
+
+// exercicio 6
+db.bios.find().skip(1).limit(2);
+
+
+// Utilizando o mongoimport, importe o arquivo books.json para a sua instância local do MongoDB e utilize a coleção books para construir as seguintes consultas:

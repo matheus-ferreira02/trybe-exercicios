@@ -1,0 +1,42 @@
+use exercicios;
+
+db.bios.insertMany([
+  {
+    "name": { "first": 'windows', "last": 'home' },
+    "birth": '22/05/2015',
+    "death": '22/05/2015',
+    "contribs" : ['matheus', 'jorge'],
+    "awards": [
+      { "award": 'melhor ISO', "year": 2022, "by": 'amazon' }
+    ]
+  },
+  {
+    "name": { "first": 'ubuntu', "last": 'mint' },
+    "birth": '22/05/2015',
+    "death": '22/05/2015',
+    "contribs" : ['breno', 'rafael'],
+    "awards": [
+      { "award": 'melhor ISO leve', "year": 2019, "by": 'MELI' }
+    ]
+  },
+  {
+    "name": { "first": 'ios', "last": 'pro' },
+    "birth": '22/05/2015',
+    "death": '22/05/2015',
+    "contribs" : ['steve', 'jobs'],
+    "awards": [
+      { "award": 'mais cara', "year": 2010, "by": 'mundo' }
+    ]
+  }
+]);
+
+db.bios.insertOne({
+  _id: 8,
+  name: { first: 'haha', last: 'tanto faz' },
+  birth: '22/05/2015',
+  death: '22/05/2015',
+  contribs : ['steve', 'jobs'],
+  awards: [
+    { award: 'mais cara', year: 2010, by: 'mundo' }
+  ]
+});
