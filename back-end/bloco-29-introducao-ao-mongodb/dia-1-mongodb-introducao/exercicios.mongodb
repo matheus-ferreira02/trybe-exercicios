@@ -22,3 +22,15 @@ db.bios.find().skip(1).limit(2);
 
 
 // Utilizando o mongoimport, importe o arquivo books.json para a sua instância local do MongoDB e utilize a coleção books para construir as seguintes consultas:
+
+//exercicio 7
+db.books.countDocuments();
+
+//exercicio 8
+db.books.countDocuments({ status: 'PUBLISH' });
+
+//exercicio 9
+db.books.find({}, { title: 1, isbn: 1, pageCount: 1, _id: 0 }).limit(3);
+
+//exercicio 10
+db.books.find({ status: 'MEAP' }, { title: 1, authors: 1, status: 1 }).skip(5).limit(10);
